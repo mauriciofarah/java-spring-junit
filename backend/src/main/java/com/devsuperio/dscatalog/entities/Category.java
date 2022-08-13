@@ -1,5 +1,6 @@
 package com.devsuperio.dscatalog.entities;
 
+import com.devsuperio.dscatalog.dto.CategoryDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,4 +22,5 @@ public class Category implements Serializable {
     @Column(name = "id", nullable = false)
     private Long id;
     private String name;
+
 }
