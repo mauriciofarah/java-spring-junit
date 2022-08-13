@@ -1,10 +1,7 @@
 package com.devsuperio.dscatalog.dto;
 
 import com.devsuperio.dscatalog.entities.Category;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.io.Serializable;
 
@@ -12,6 +9,7 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode
 public class CategoryDTO implements Serializable {
     private Long id;
     private String name;
