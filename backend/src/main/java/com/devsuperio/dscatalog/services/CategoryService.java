@@ -48,10 +48,9 @@ public class CategoryService {
     @Transactional
     public CategoryDTO updateCategory(Long id, CategoryDTO categoryDTO) {
         try {
-            //getReferenceById
             Category category = repository.getReferenceById(id);
             category.setName(categoryDTO.getName());
-            category = repository.save(category);
+            category = repository.saveAndFlush(category);
 
             return new CategoryDTO(category);
         } catch (EntityNotFoundException e) {
