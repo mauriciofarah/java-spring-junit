@@ -44,7 +44,7 @@ public class CategoryService {
         return new CategoryDTO(category.orElseThrow(() -> new ResourceNotFoundException("Category not found")));
     }
 
-    @Transactional(readOnly = true)
+    @Transactional
     public CategoryDTO saveCategory(CategoryDTO categoryDTO) {
         Category category = new Category();
         category.setName(categoryDTO.getName());

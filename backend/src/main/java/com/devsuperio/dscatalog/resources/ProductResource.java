@@ -46,24 +46,23 @@ public class ProductResource {
         return ResponseEntity.ok(productDTO);
     }
 
-    //TO BE IMPLEMENTED
-//    @PostMapping
-//    public ResponseEntity<ProductDTO> saveProduct(@RequestBody ProductDTO productDTO) {
-//        productDTO = productService.saveProduct(productDTO);
-//        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-//                .buildAndExpand(productDTO.getId()).toUri();
-//        return ResponseEntity.created(uri).body(productDTO);
-//    }
-//
-//    @PutMapping(value = "/{id}")
-//    public ResponseEntity<ProductDTO> update(@PathVariable Long id, @RequestBody ProductDTO productDTO) {
-//        productDTO = productService.updateProduct(id, productDTO);
-//        return ResponseEntity.ok().body(productDTO);
-//    }
-//
-//    @DeleteMapping(value = "/{id}")
-//    public ResponseEntity<Void> delete(@PathVariable Long id) {
-//        productService.deleteProduct(id);
-//        return ResponseEntity.noContent().build();
-//    }
+    @PostMapping
+    public ResponseEntity<ProductDTO> saveProduct(@RequestBody ProductDTO productDTO) {
+        productDTO = productService.saveProduct(productDTO);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
+                .buildAndExpand(productDTO.getId()).toUri();
+        return ResponseEntity.created(uri).body(productDTO);
+    }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<ProductDTO> update(@PathVariable Long id, @RequestBody ProductDTO productDTO) {
+        productDTO = productService.updateProduct(id, productDTO);
+        return ResponseEntity.ok().body(productDTO);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        productService.deleteProduct(id);
+        return ResponseEntity.noContent().build();
+    }
 }
