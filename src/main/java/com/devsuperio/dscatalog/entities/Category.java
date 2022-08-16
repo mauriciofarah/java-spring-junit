@@ -30,6 +30,11 @@ public class Category implements Serializable {
     @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private Instant updatedAt;
 
+    public Category(long id, String categoryName) {
+        this.id = id;
+        this.name = categoryName;
+    }
+
     @PrePersist
     public void prePersist() {
         createdAt = Instant.now();
